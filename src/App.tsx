@@ -6,9 +6,7 @@ import "./App.css"
 const App = () => {
   const { data } = useContext(DataContext);
 
-useEffect(() => {
-  console.log(data)
-},[])
+
   return (
     <>
       <LandingPage data={data}/>
