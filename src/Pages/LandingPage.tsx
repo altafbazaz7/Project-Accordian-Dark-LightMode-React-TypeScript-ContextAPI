@@ -11,13 +11,15 @@ const LandingPage = ({data}: {data: IDataObject}) => {
   
     return (
       <>
-        <Stack direction={"row"} sx={{ backgroundColor: mode === false ? "#F2F2F2" : "#292E89" , color: mode === false ? "#292E89" : "#F2F2F2",minHeight:"100vh" ,maxHeight:"400vh"}}>
+        <Stack direction={"row"} sx={{ backgroundColor: mode === false ? "#F2F2F2" : "#3339CD" , color: mode === false ? "#292E89" : "#F2F2F2",minHeight:"100vh" ,maxHeight:"400vh"}}>
             <Stack width={"10%"} height={"100%"} direction={"column"} >
                 <Stack direction={"column"} alignItems={"center"} gap={"2.5rem"} position={"absolute"} top={"15%"} left={"5%"}>
                     <HomeIcon sx={{cursor:"pointer", border:"0.5px solid silver", padding:"0.50rem", borderRadius:"7px", fontSize:"36px"}}/>
-                    <ViewStreamIcon onClick={() => setCollapse(!collapse)} sx={{cursor:"pointer", border:"0.5px solid silver", padding:"0.50rem", borderRadius:"7px", fontSize:"36px"}} />
+                   {/* <img src={Moon} style={{height:}} alt="" srcset="" /> */}
+                    <ViewStreamIcon onClick={() => setCollapse(!collapse)} sx={{cursor:"pointer", backgroundColor:  mode === false ? "#F1F5FD" : "#676AD8", border:"0.5px solid silver", padding:"0.50rem", borderRadius:"7px", fontSize:"36px"}} />
                 </Stack>
                 <Stack direction={"column"} position={"absolute"} top={"85%"} left={"5%"} >
+                  
                     <CustomizedSwitches/>
                 </Stack>
 

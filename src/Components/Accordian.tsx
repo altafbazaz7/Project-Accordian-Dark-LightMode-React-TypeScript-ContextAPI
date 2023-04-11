@@ -17,16 +17,22 @@ export default function SimpleAccordion() {
   }
   return (
     <div>
-      <Accordion   expanded={collapse} sx={{width:"40%", backgroundColor: mode === false ? "#F2F2F2" : "#6F77FF" , color: mode === false ? "#6F77FF" : "#F2F2F2" }}>
-        <AccordionSummary expandIcon={<RemoveIcon onClick={() => setCollapse(!collapse)} />} aria-controls="panel1a-content" id="panel1a-header">
+            <Stack width={"98.3%"} direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
+
+      <Typography variant="h6" sx={{ color: mode === false ? "#3D4149" : "#F2F2F2"}}>SPACE DATA</Typography>
+      <RemoveIcon />
+      </Stack>
+      <Accordion   expanded={collapse} sx={{width:"100%", height:"65px", backgroundColor: mode === false ? "#F1F5FD" : "#676AD8" , color: mode === false ? "#3339CD" : "#F2F2F2" }}>
+        <AccordionSummary  expandIcon={<RemoveIcon  sx={{color: mode === false ? "black" : "white", }} onClick={() => setCollapse(!collapse)} />} aria-controls="panel1a-content" id="panel1a-header">
             <Stack direction={"row"} gap={"0.125rem"}>
             <AccessTimeIcon/>
-          <Typography>Time</Typography>
-          </Stack>
+              <Typography>Time</Typography>
+              </Stack>
+
         </AccordionSummary>
         <AccordionDetails>
-        <Accordion  sx={{width:"100%", backgroundColor: mode === false ? "#F2F2F2" : "#6F77FF" , color: mode === false ? "#6F77FF" : "#F2F2F2", boxShadow:"none" }}>
-        <AccordionSummary expandIcon={<RemoveIcon  />} aria-controls="panel1a-content" id="panel1a-header">
+        <Accordion  sx={{width:"102%", backgroundColor: mode === false ? "#F2F2F2" : "#3339CD" , color: mode === false ? "#3339CD" : "#F2F2F2", boxShadow:"none" }}>
+        <AccordionSummary expandIcon={<RemoveIcon sx={{ color : mode === false ? "black" : "white"}} />} aria-controls="panel1a-content" id="panel1a-header">
             <Stack direction={"row"} gap={"0.125rem"}>
             <LayersIcon />
           <Typography>202215</Typography>
@@ -34,14 +40,18 @@ export default function SimpleAccordion() {
         </AccordionSummary>
         <AccordionDetails sx={{display:"flex", flexDirection:"column"}}>
         <Stack direction={"column"}>
-        <FormControlLabel control={<Checkbox  onChange={handleSelectAll} />} label="Select All" />
-        {data.map((element: any, index: any) => {
+        <FormControlLabel control={<Checkbox 
+          sx={{color: mode === false ? "#4C51B9" : 'white'}}
+        onChange={handleSelectAll} />} label="Select All" />
+        {data.slice(1,8).map((element: any, index: any) => {
   return (
     <React.Fragment key={index}>
       <FormControlLabel
         control={
           <Checkbox
             checked={!selected}
+          sx={{color: mode === false ? "#4C51B9" : 'white'}}
+
             onChange={() => setSelected(!selected)}
           />
         }
